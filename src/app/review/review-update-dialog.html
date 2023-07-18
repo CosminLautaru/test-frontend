@@ -1,0 +1,16 @@
+<div class="update-reviews-container">
+    <h3 *ngIf="isReviewUpdated" >Edit review</h3>
+    <h3 *ngIf="!isReviewUpdated" >Add review</h3>
+
+    <mat-form-field  fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-label>Review_text</mat-label>
+        <input matInput [(ngModel)]="data.review_text">
+    </mat-form-field>
+    <mat-form-field  fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-label>Reviewer Name</mat-label>
+        <input matInput [(ngModel)]="data.reviewer_name">
+    </mat-form-field>
+
+    <button mat-button *ngIf="isReviewUpdated" (click)="UpdateReview()">Update Review</button>
+    <button mat-button *ngIf="!isReviewUpdated" (click)="addReview()">Add Review</button>
+</div>

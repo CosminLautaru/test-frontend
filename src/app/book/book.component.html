@@ -1,0 +1,27 @@
+<div class="books-container">
+    <h3 class="books-header">Books</h3>
+    <div style="display: flex; justify-content: space-evenly; padding: 2rem;">
+        <tr fxFlex *ngFor="let book of books">
+            <mat-card class="example-card">
+                <mat-card-header>
+                <mat-card-title>Title: {{book.title}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                <p>Author: {{book.author}}</p>
+                <p>Date: {{ book.publication_date | date: 'dd/MM/yyyy'}}</p>
+                <p>Summary: {{book.summary}}</p>
+                <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-actions>
+                <button (click)="UpdateBook(book)" mat-button>Edit</button>
+                <button (click)="deleteBook(book.id)" mat-button>Delete</button>
+                <button (click)="openReviewTab(book.id)" mat-button>Show Reviews</button>
+                
+                </mat-card-actions>
+            </mat-card>
+        </tr>
+    </div>
+    <div class="button-wrapper">
+        <button mat-button class="add-books-button" (click)="AddBook()">New Book</button>
+    </div>
+</div>

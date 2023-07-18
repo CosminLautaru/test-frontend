@@ -1,0 +1,19 @@
+<div class="update-books-container">
+    <h3 *ngIf="isBookUpdated" >Edit Book</h3>
+    <h3 *ngIf="!isBookUpdated" >Add Book</h3>
+    <mat-form-field  fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="data.title">
+    </mat-form-field>
+    <mat-form-field  fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-label>Author</mat-label>
+        <input matInput [(ngModel)]="data.author">
+    </mat-form-field>
+    <mat-form-field  fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-label>Summary</mat-label>
+        <input matInput [(ngModel)]="data.summary">
+    </mat-form-field>
+
+    <button mat-button *ngIf="isBookUpdated" (click)="UpdateBook()">Update Book</button>
+    <button mat-button *ngIf="!isBookUpdated" (click)="AddBook()">Add Book</button>
+</div>

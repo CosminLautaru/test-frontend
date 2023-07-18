@@ -1,0 +1,22 @@
+<h3 class="reviews-header">Reviews</h3>
+<div class="reviews-container">
+    <tr fxFlex *ngFor="let review of reviews">
+    <mat-card class="example-card">
+        <mat-card-header>
+        <mat-card-title>Reviewer Name: {{review.reviewer_name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+        <p>Review: {{review.review_text}}</p>
+        <p>Date: {{review.review_date | date: 'dd/MM/yyyy'}}</p>
+        <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+        <button (click)="openDialog(review)" mat-button>Edit</button>
+        <button (click)="deleteReview(review.id)" mat-button>Delete</button>
+        </mat-card-actions>
+    </mat-card>
+    </tr>
+</div>
+<div class="button-wrapper">
+    <button mat-button class="add-books-button" (click)="addReview()">New review</button>
+</div>

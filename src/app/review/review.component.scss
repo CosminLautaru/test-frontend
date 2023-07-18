@@ -1,0 +1,24 @@
+
+.reviews-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+    max-width: 100vw;
+}
+.add-reviews-button{
+    width:100px;
+}
+.button-wrapper{
+    padding-top:40px;
+    display: flex;
+    justify-content: center;    
+}
+.reviews-header{
+    color:white;
+    background-color:#012622;
+    margin:0;
+    padding:30px;
+    text-align: center;
+}
+
