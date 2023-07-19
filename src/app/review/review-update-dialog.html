@@ -4,13 +4,13 @@
 
     <mat-form-field  fxLayout="column" fxLayoutAlign="space-around center">
         <mat-label>Review_text</mat-label>
-        <input matInput [(ngModel)]="data.review_text">
+        <input matInput [(ngModel)]="data.review_text" >
     </mat-form-field>
     <mat-form-field  fxLayout="column" fxLayoutAlign="space-around center">
         <mat-label>Reviewer Name</mat-label>
         <input matInput [(ngModel)]="data.reviewer_name">
     </mat-form-field>
 
-    <button mat-button *ngIf="isReviewUpdated" (click)="UpdateReview()">Update Review</button>
-    <button mat-button *ngIf="!isReviewUpdated" (click)="addReview()">Add Review</button>
+    <button mat-button *ngIf="isReviewUpdated" (click)="UpdateReview()" [disabled]="data.review_text=== '' || data.reviewer_name === ''" >Update Review</button>
+    <button mat-button *ngIf="!isReviewUpdated" (click)="addReview()" [disabled]="!data.review_text || !data.reviewer_name">Add Review</button>
 </div>

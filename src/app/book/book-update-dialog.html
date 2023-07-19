@@ -14,6 +14,7 @@
         <input matInput [(ngModel)]="data.summary">
     </mat-form-field>
 
-    <button mat-button *ngIf="isBookUpdated" (click)="UpdateBook()">Update Book</button>
-    <button mat-button *ngIf="!isBookUpdated" (click)="AddBook()">Add Book</button>
+    <button mat-button *ngIf="isBookUpdated" (click)="UpdateBook()"
+    [disabled]="data.title=== '' || data.author === '' || data.summary ===''">Update Book</button>
+    <button mat-button *ngIf="!isBookUpdated" (click)="AddBook()" [disabled]="!data.title|| !data.author || !data.summary">Add Book</button>
 </div>
